@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 # --- TU URL DE APPS SCRIPT (Asegúrate de que sea la tuya) ---
-URL_APPS_SCRIPT = "TU_URL_ORIGINAL_AQUI" 
+URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbwfkvRYuit-2l79v3wgFJEmMuIRt3_SCbGvuG3c5Z90aUv7snPM2wlrJ4mHiJfEhu1YWw/exec" 
 
 st.title("📝 Formulario de Estudiantes")
 
