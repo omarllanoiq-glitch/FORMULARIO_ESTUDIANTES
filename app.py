@@ -1,18 +1,29 @@
 import streamlit as st
 import requests
 
-# 1. Configuración
-st.set_page_config(page_title="Registro Académico", page_icon="🏫", layout="centered")
+# --- EN TU ARCHIVO app.py ---
 
-# --- TRUCO PARA OCULTAR MARCAS (NUEVO) ---
-hide_st_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_st_style, unsafe_allow_html=True)
+# Pega esto justo después de st.set_page_config(...)
+
+hide_elements = """
+    <style>
+    /* Ocultar menú de hamburguesa (tres rayas) superior derecha */
+    #MainMenu {visibility: hidden;}
+    
+    /* Ocultar pie de página "Made with Streamlit" */
+    footer {visibility: hidden;}
+    
+    /* Ocultar la barra de decoración superior (la línea de colores) */
+    header {visibility: hidden;}
+    
+    /* Ajuste específico para móviles: Ocultar barra superior vacía si queda alguna */
+    div[data-testid="stHeader"] {
+        visibility: hidden;
+        height: 0px;
+    }
+    </style>
+"""
+st.markdown(hide_elements, unsafe_allow_html=True)
 # -----------------------------------------
 
 
