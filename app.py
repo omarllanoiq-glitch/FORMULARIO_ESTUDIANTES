@@ -1,18 +1,19 @@
 import streamlit as st
 import requests
 
-# --- 1. CONFIGURACIÓN DE PÁGINA ---
-# Esto configura el título de la pestaña y el diseño
-st.set_page_config(
-    # --- OCULTAR MARCAS DE AGUA Y MENÚS ---
+# 1. Configuración
+st.set_page_config(page_title="Registro Académico", page_icon="🏫", layout="centered")
+
+# --- TRUCO PARA OCULTAR MARCAS (NUEVO) ---
+hide_st_style = """
             <style>
-            hide_st_style = """
             #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
             header {visibility: hidden;}
             </style>
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
+# -----------------------------------------
     page_title="Registro Académico",
     page_icon="🏫",
     layout="centered"
