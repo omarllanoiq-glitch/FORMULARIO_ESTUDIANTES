@@ -12,7 +12,7 @@ st.set_page_config(
 
 # --- TU URL DE APPS SCRIPT ---
 # ¡NO OLVIDES PEGAR TU URL AQUÍ!
-URL_APPS_SCRIPT = "TU_URL_ORIGINAL_AQUI"
+URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbwfkvRYuit-2l79v3wgFJEmMuIRt3_SCbGvuG3c5Z90aUv7snPM2wlrJ4mHiJfEhu1YWw/exec"
 
 # --- ENCABEZADO ESTILO INSTITUCIONAL (Con un truco de HTML/CSS) ---
 # Esto crea una barra azul superior para darle identidad
