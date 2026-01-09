@@ -1,28 +1,42 @@
 import streamlit as st
 import requests
 
-# --- CAMBIA ESTO POR TU URL DE APPS SCRIPT ---
-URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbwfkvRYuit-2l79v3wgFJEmMuIRt3_SCbGvuG3c5Z90aUv7snPM2wlrJ4mHiJfEhu1YWw/exec"
+# --- TU URL DE APPS SCRIPT (Asegúrate de que sea la tuya) ---
+URL_APPS_SCRIPT = "TU_URL_ORIGINAL_AQUI" 
 
-st.title("📝 Formulario Estudiantes")
+st.title("📝 Formulario de Estudiantes")
 
 with st.form("mi_formulario"):
     nombre = st.text_input("Nombre completo")
     correo = st.text_input("Correo electrónico")
-    respuesta = st.text_area("Comentario")
     
-    submitted = st.form_submit_button("Enviar")
+    # --- NUEVO: SELECTOR DE CURSO ---
+    curso = st.selectbox(
+        "Selecciona tu Curso/Carrera:",
+        ["Mecánica Automotriz", "Ingeniería de Software", "Electricidad Industrial", "Administración", "Otro"]
+    )
+    
+    respuesta = st.text_area("Comentario o Consulta")
+    
+    submitted = st.form_submit_button("Enviar Datos")
 
     if submitted:
         if not nombre:
-            st.error("Falta el nombre")
+            st.error("Por favor escribe tu nombre.")
         else:
-            datos = {"nombre": nombre, "correo": correo, "respuesta": respuesta}
+            # Agregamos 'curso' al paquete de datos
+            datos = {
+                "nombre": nombre, 
+                "correo": correo, 
+                "curso": curso, 
+                "respuesta": respuesta
+            }
+            
             try:
                 r = requests.post(URL_APPS_SCRIPT, json=datos)
                 if r.status_code == 200:
-                    st.success("¡Enviado!")
+                    st.success(f"¡Registrado en el curso de {curso}!")
                 else:
-                    st.error("Error al enviar")
+                    st.error("Error al enviar.")
             except:
-                st.error("Error de conexión")
+                st.error("Error de conexión.")
