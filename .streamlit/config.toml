@@ -1,0 +1,24 @@
+# Archivo de configuración de tema para Streamlit
+# Estilo inspirado en SENATI (Azul institucional, limpio, técnico)
+
+[theme]
+# Color primario: El azul fuerte institucional. 
+# Esto pintará los botones, los selectores activos y los bordes de enfoque.
+primaryColor="#004a99"
+
+# Color de fondo: Blanco puro para un look limpio y profesional.
+backgroundColor="#FFFFFF"
+
+# Color de fondo secundario: Un gris azulado muy claro para los cuadros de input y paneles laterales.
+secondaryBackgroundColor="#f0f4f8"
+
+# Color del texto: Gris muy oscuro, casi negro, para máxima legibilidad.
+textColor="#212529"
+
+# Tipo de fuente: Sans serif moderna y técnica.
+font="sans serif"
+
+# Configuración de la barra base (opcional, la ocultamos para que se vea más "app propia")
+[client]
+showSidebarNavigation = false
+toolbarMode = "viewer"
