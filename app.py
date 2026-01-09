@@ -14,10 +14,7 @@ hide_st_style = """
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 # -----------------------------------------
-    page_title="Registro Académico",
-    page_icon="🏫",
-    layout="centered"
-)
+
 
 # --- 2. TU URL DE APPS SCRIPT ---
 # ⚠️ IMPORTANTE: Borra lo de abajo y pega TU URL que termina en /exec
