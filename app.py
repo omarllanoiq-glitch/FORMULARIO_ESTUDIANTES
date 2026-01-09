@@ -78,7 +78,22 @@ with st.form("mi_formulario_senati"):
                     r = requests.post(URL_APPS_SCRIPT, json=datos)
                     if r.status_code == 200:
                         # Mensaje de éxito en verde, grande y claro
-                        st.balloons()
+
+                        if r.status_code == 200:
+                        # --- CAMBIO AQUÍ ---
+                        # En vez de st.balloons(), usamos un toast elegante.
+                        # icon="✅" añade un check verde pequeño al mensaje emergente.
+                        st.toast("¡Registro completado exitosamente!", icon="✅")
+                        
+                        # Mantenemos el mensaje grande verde fijo por si acaso
+                        st.success(f"✅ Datos recibidos. Te has registrado correctamente en la especialidad de **{curso}**.")
+                        
+                    else:
+                        st.error("❌ Error en el servidor. Intente nuevamente.")
+
+
+                        
+                        
                         st.success(f"✅ ¡Registro Exitoso! Tus datos para la especialidad de **{curso}** han sido guardados correctamente en el sistema.")
                     else:
                         st.error("❌ Error en el servidor. Intente nuevamente.")
