@@ -5,8 +5,8 @@ import requests
 # Esto configura el título de la pestaña y el diseño
 st.set_page_config(
     # --- OCULTAR MARCAS DE AGUA Y MENÚS ---
-            hide_st_style = """
             <style>
+            hide_st_style = """
             #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
             header {visibility: hidden;}
