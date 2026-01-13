@@ -7,20 +7,22 @@ import requests
 
 hide_elements = """
     <style>
-    /* Ocultar menú de hamburguesa (tres rayas) superior derecha */
-    #MainMenu {visibility: hidden;}
-    
-    /* Ocultar pie de página "Made with Streamlit" */
-    footer {visibility: hidden;}
-    
-    /* Ocultar la barra de decoración superior (la línea de colores) */
-    header {visibility: hidden;}
-    
-    /* Ajuste específico para móviles: Ocultar barra superior vacía si queda alguna */
-    div[data-testid="stHeader"] {
-        visibility: hidden;
-        height: 0px;
-    }
+  
+/* Ocultar el menú superior derecho (hamburguesa) */
+        #MainMenu {visibility: hidden;}
+        
+        /* Ocultar el pie de página estándar */
+        footer {visibility: hidden;}
+        
+        /* Ocultar la barra decorativa superior */
+        header {visibility: hidden;}
+
+        /* INTENTO DE OCULTAR LA BARRA INFERIOR MÓVIL */
+        /* Nota: Esto puede no funcionar en todos los celulares porque Streamlit lo protege */
+        .stApp > header {display: none;}
+        
+        /* Ocultar el botón de "Deploy" si eres el desarrollador */
+        .stDeployButton {display:none;}
     </style>
 """
 st.markdown(hide_elements, unsafe_allow_html=True)
